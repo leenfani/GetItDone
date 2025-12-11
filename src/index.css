@@ -1,0 +1,37 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+ 
+}
+
+button {
+  border-radius: 90px;
+  border: 1px solid transparent;
+  padding: 5px 0px;
+  margin: 5px 5px;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+ background-color: rgb(18, 182, 247);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: rgb(252, 244, 244);
+   width: 80px;  /* نفس العرض لكل زر */
+}
+button:hover {
+  border-color: #000000;
+}
