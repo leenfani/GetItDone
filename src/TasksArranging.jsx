@@ -5,7 +5,7 @@ export default function TasksArranging() {
   const [taskslist, setTaskslist] = useState([]);
   const nextid = useRef(0);
 
-  //انشاء id فريد
+  //انشاء id 
   function increase() {
     nextid.current++;
     return nextid.current;
@@ -39,8 +39,9 @@ export default function TasksArranging() {
   const tasks = taskslist.map((task) => (
     <li key={task.id} style={{ marginBottom: "10px" }}>
       <span>{task.name}</span>
+      <hr></hr>
       <div>
-        <button onClick={() => handleDeleteClick(task.id)}>Delete</button>
+        <button style={{backgroundColor: "rgba(199, 40, 40, 1)"}} onClick={() => handleDeleteClick(task.id)}>Delete</button>
         <button
           style={{
             backgroundColor: task.pressed ? " rgb(18, 182, 247)" : "white",

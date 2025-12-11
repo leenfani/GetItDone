@@ -2,8 +2,6 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  
 }
 
 body {
@@ -13,25 +11,33 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-
-h1 {
+span {
+  font-weight: 500;
+  font-size: 30px;
+  
+  padding: 10px;
+  border-radius: 10px;
  
 }
-
 button {
   border-radius: 90px;
   border: 1px solid transparent;
   padding: 5px 0px;
-  margin: 5px 5px;
+  margin: 15px 5px;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
- background-color: rgb(18, 182, 247);
+  background-color: rgb(18, 182, 247);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: 0.25s;
   color: rgb(252, 244, 244);
-   width: 80px;  /* نفس العرض لكل زر */
+  width: 60px;
 }
 button:hover {
   border-color: #000000;
+}
+input{
+  width: 150px;
+  height: 20px;
+  border-radius: 10px;
 }
