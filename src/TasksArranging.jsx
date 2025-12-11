@@ -5,7 +5,7 @@ export default function TasksArranging() {
   const [taskslist, setTaskslist] = useState([]);
   const nextid = useRef(0);
 
-  //انشاء id 
+  //انشاء id
   function increase() {
     nextid.current++;
     return nextid.current;
@@ -35,18 +35,27 @@ export default function TasksArranging() {
     );
   }
 
+//when all pressed show alert
+  function allPressed() {
+  taskslist.every((task) => task.pressed) &&
+    alert("you have done your work for today!");
+}
+
   // عرض القائمة
   const tasks = taskslist.map((task) => (
     <li key={task.id} style={{ marginBottom: "10px" }}>
       <span>{task.name}</span>
       <hr></hr>
       <div>
-        <button style={{backgroundColor: "rgba(199, 40, 40, 1)"}} onClick={() => handleDeleteClick(task.id)}>Delete</button>
+        <button
+          style={{ backgroundColor: "rgba(199, 40, 40, 1)" }}
+          onClick={() => handleDeleteClick(task.id)}>
+          Delete
+        </button>
         <button
           style={{
             backgroundColor: task.pressed ? " rgb(18, 182, 247)" : "white",
             color: task.pressed ? "white" : "black",
-            
           }}
           onClick={() => handleDoneClicked(task.id)}>
           Done
@@ -66,6 +75,9 @@ export default function TasksArranging() {
       <button onClick={handleAddClick} style={{ padding: "5px 10px" }}>
         Add
       </button>
-    </> 
+       <button onClick={allPressed} style={{ width:"80px"}}>
+      Check All
+    </button>
+    </>
   );
 }
