@@ -11,7 +11,7 @@ export default function TasksArranging() {
     return nextid.current;
   }
 
-  // إضافة مهمة جديدة
+  // إضافة مهمة 
   function handleAddClick() {
     setTaskslist([
       ...taskslist,
@@ -20,13 +20,13 @@ export default function TasksArranging() {
     setNewTask("");
   }
 
-  // حذف مهمة محددة
+  // حذف مهمة 
   function handleDeleteClick(id) {
     const newTasksList = taskslist.filter((task) => task.id !== id);
     setTaskslist(newTasksList);
   }
 
-  // تبديل حالة Done لكل مهمة
+  //  Done لكل مهمة
   function handleDoneClicked(id) {
     setTaskslist((prev) =>
       prev.map((task) =>
@@ -37,8 +37,8 @@ export default function TasksArranging() {
 
 //when all pressed show alert
   function allPressed() {
-  taskslist.every((task) => task.pressed) &&
-    alert("you have done your work for today!");
+  taskslist.every((task) => task.pressed) ?
+    alert("you have done your work for today!"): alert("you still have some to do")
 }
 
   // عرض القائمة
@@ -48,7 +48,7 @@ export default function TasksArranging() {
       <hr></hr>
       <div>
         <button
-          style={{ backgroundColor: "rgba(199, 40, 40, 1)" }}
+          style={{ backgroundColor: "rgba(209, 5, 5, 0.788) " }}
           onClick={() => handleDeleteClick(task.id)}>
           Delete
         </button>
@@ -65,7 +65,7 @@ export default function TasksArranging() {
   ));
 
   return (
-    <>
+    <div style={{backgroundColor:"#a3a3a3",border:"solid, 2px" ,padding:"20px", borderRadius:"10px"}}>
       <ul style={{ padding: 0, listStyle: "none" }}>{tasks}</ul>
       <input
         value={newTask}
@@ -78,6 +78,6 @@ export default function TasksArranging() {
        <button onClick={allPressed} style={{ width:"80px"}}>
       Check All
     </button>
-    </>
+    </div>
   );
 }
